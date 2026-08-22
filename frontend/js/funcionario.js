@@ -1,4 +1,4 @@
-const formulario = document.getElementById("form-aluno");
+const formulario = document.getElementById("form-funcionario");
 const mensagem = document.getElementById("mensagem");
 
 formulario.addEventListener("submit", async function(evento) {
@@ -6,39 +6,39 @@ formulario.addEventListener("submit", async function(evento) {
 
     mensagem.textContent = "";
 
-    const aluno = {
+    const funcionario = {
         nome: document.getElementById("nome").value,
         cpf: document.getElementById("cpf").value,
         email: document.getElementById("email").value,
         data_nascimento: document.getElementById("data_nascimento").value,
         telefone: document.getElementById("telefone").value,
-        ra: document.getElementById("ra").value,
+        cargo: document.getElementById("cargo").value,
         cidade: document.getElementById("cidade").value
     };
 
     try {
 
-        const resposta = await fetch("/alunos", {
+        const resposta = await fetch("/funcionario", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(aluno)
+            body: JSON.stringify(funcionario)
         });
 
         const resultado = await resposta.json();
 
         if (resposta.ok) {
 
-            mensagem.textContent = "Aluno cadastrado com sucesso!";
+            mensagem.textContent = "professor cadastrado com sucesso!";
 
             formulario.reset();
 
-            console.log("Aluno cadastrado:", resultado);
+            console.log("funcionario cadastrado:", resultado);
 
         } else {
 
-            mensagem.textContent = "Erro ao cadastrar aluno: " + obterMensagemErro(resultado);
+            mensagem.textContent = "Erro ao cadastrar funcionario: " + obterMensagemErro(resultado);
 
             console.error("Erro da API:", resultado);
         }
@@ -85,8 +85,8 @@ function obterMensagemErro(resultado) {
                     return "Telefone inválido.";
                 }
 
-                if (campo === "ra") {
-                    return "RA inválido.";
+                if (campo === "cargo") {
+                    return "cargo inválido.";
                 }
 
                 if (campo === "cidade") {

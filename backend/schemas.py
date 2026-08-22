@@ -22,3 +22,37 @@ class AlunoResponse(BaseModel):
     telefone: str
     ra: str
     cidade: str
+
+class ProfessorCreate(BaseModel):
+    nome: str
+    cpf: str
+    email: EmailStr
+    data_nascimento: date
+    telefone: str
+    cidade: str
+
+class ProfessorResponse(BaseModel):
+    codProf: int
+    nome: str
+    cpf: str
+    email: EmailStr
+    data_nascimento: date
+    telefone: str
+    cidade: str
+class FuncionarioCreate(BaseModel):
+    nome: str
+    cpf: str
+    email: EmailStr 
+    data_nascimento: date
+    telefone: str
+    cidade: str
+    cargo: str
+class FuncionarioResponse(BaseModel):
+    codFunc: int
+    nome: str
+    cpf: str
+    email: EmailStr 
+    data_nascimento: date
+    telefone: str
+    cidade: str
+    cargo: str
