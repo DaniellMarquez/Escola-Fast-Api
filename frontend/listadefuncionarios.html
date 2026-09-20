@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Funcionários</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container py-4">
@@ -11,9 +12,7 @@
 
     <div class="card shadow-sm border-0 mb-4">
         <div class="card-body">
-            <h5 class="card-title fw-bold mb-3">
-                🔎 Filtrar funcionários
-            </h5>
+            <h5 class="card-title fw-bold mb-3">🔎 Filtrar funcionarios</h5>
 
             <div class="row g-3 align-items-end">
                 <div class="col-md-3">
@@ -25,6 +24,7 @@
                         <option value="email">E-mail</option>
                         <option value="data_nascimento">Data Nasc.</option>
                         <option value="telefone">Telefone</option>
+                        <option value="cargo">Cargo</option>
                         <option value="cidade">Cidade</option>
                     </select>
                 </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <!-- Tabela para renderização dos dados -->
+    <!-- Tabela de Funcionários -->
     <div class="table-responsive mb-4">
         <table class="table table-striped table-hover align-middle">
             <thead class="table-dark">
@@ -56,7 +56,9 @@
                     <th>E-mail</th>
                     <th>Data Nasc.</th>
                     <th>Telefone</th>
+                    <th>Cargo</th>
                     <th>Cidade</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody id="listaFuncionarios">
@@ -65,7 +67,7 @@
     </div>
 
     <div>
-        <a href="/cadastro-de-funcionario" class="btn btn-link">Cadastrar novo funcionário</a> | 
+        <a href="/cadastro-de-funcionario" class="btn btn-link">Cadastrar Novo Funcionário</a> |
         <a href="/" class="btn btn-link">Voltar ao início</a>
     </div>
 
