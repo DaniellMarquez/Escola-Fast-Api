@@ -1,6 +1,6 @@
 Markdown
 
-# 🏫 Sistema de Gestão Escolar - API REST & Frontend
+# 🏫 Sistema de Gestão Escolar - Fast Api & Frontend
 
 Um sistema web completo para gerenciamento acadêmico e administrativo, desenvolvido com **FastAPI**, **MySQL** e **JavaScript puro**. O projeto oferece um CRUD estruturado para o cadastro e a listagem de **Alunos**, **Professores** e **Funcionários**.
 
